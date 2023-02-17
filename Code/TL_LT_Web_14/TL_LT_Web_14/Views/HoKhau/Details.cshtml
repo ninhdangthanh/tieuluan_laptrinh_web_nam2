@@ -1,0 +1,51 @@
+﻿@model TL_LT_Web_14.Models.HoKhau
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .dl-horizontal {
+        margin-left: 50%;
+        transform: translateX(-30%);
+    }
+
+    h2, h4 {
+        text-align: center;
+    }
+</style>
+
+<div>
+    <h2>Chi tiết</h2>
+    <h4>Hộ khẩu</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Số sổ hộ khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoSoHoKhau)
+        </dd>
+
+        <dt>
+            Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            Mã phường
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaPhuong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

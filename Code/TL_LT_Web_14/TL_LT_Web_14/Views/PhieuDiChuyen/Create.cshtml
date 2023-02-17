@@ -1,0 +1,67 @@
+﻿@model TL_LT_Web_14.Models.PhieuDiChuyen
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .form-horizontal {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    h2, h4 {
+        text-align: center;
+    }
+</style>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h2>Tạo mới</h2>
+        <h4>Phiếu di chuyển</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Số phiếu</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.SoPhieu)
+                @Html.ValidationMessageFor(model => model.SoPhieu)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Ngày lập phiếu</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.NgayLapPhieu)
+                @Html.ValidationMessageFor(model => model.NgayLapPhieu)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Địa chỉ nơi đến</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.DiaChiNoiDen)
+                @Html.ValidationMessageFor(model => model.DiaChiNoiDen)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-6 col-md-10">
+                <input type="submit" value="Tạo mới" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,51 @@
+﻿@model TL_LT_Web_14.Models.PhieuDiChuyen
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .dl-horizontal {
+        margin-left: 50%;
+        transform: translateX(-30%);
+    }
+
+    h2, h4 {
+        text-align: center;
+    }
+</style>
+
+<div>
+    <h2>Chi tiết</h2>
+    <h4>Phiếu di chuyển</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Số phiếu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoPhieu)
+        </dd>
+
+        <dt>
+            Ngày lập phiếu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayLapPhieu)
+        </dd>
+
+        <dt>
+            Địa chỉ nơi đến
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiNoiDen)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

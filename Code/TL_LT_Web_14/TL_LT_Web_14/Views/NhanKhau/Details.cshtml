@@ -1,0 +1,99 @@
+﻿@model TL_LT_Web_14.Models.NhanKhau
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .dl-horizontal {
+        margin-left: 50%;
+        transform: translateX(-30%);
+    }
+
+    h2, h4 {
+        text-align: center;
+    }
+</style>
+
+<div>
+    <h2>Chi tiết</h2>
+    <h4>Nhân khẩu</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã nhân khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNhanKhau)
+        </dd>
+
+        <dt>
+           Tên nhân khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNhanKhau)
+        </dd>
+
+        <dt>
+            Phái nữ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhaiNu)
+        </dd>
+
+        <dt>
+            Ngày sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+        <dt>
+            Số CMND
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoCMND)
+        </dd>
+
+        <dt>
+            Mã trình độ văn hóa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaTrinhDoVanHoa)
+        </dd>
+
+        <dt>
+            Mã ngoại ngữ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNgoaiNgu)
+        </dd>
+
+        <dt>
+            Số sổ hộ khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoSoHoKhau)
+        </dd>
+
+        <dt>
+            Ghi chú
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

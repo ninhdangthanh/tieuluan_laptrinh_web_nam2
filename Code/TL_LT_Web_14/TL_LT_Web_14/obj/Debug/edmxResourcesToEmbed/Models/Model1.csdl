@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Dan_So_Mot_Quan_14Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ChiTietPhieuDiChuyen">
+    <Key>
+      <PropertyRef Name="SoPhieu" />
+    </Key>
+    <Property Name="SoPhieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="STT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaNhanKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HoKhau">
+    <Key>
+      <PropertyRef Name="SoSoHoKhau" />
+    </Key>
+    <Property Name="SoSoHoKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaPhuong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NgoaiNgu">
+    <Key>
+      <PropertyRef Name="MaNgoaiNgu" />
+    </Key>
+    <Property Name="MaNgoaiNgu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenNgoaiNgu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NhanKhau">
+    <Key>
+      <PropertyRef Name="MaNhanKhau" />
+    </Key>
+    <Property Name="MaNhanKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenNhanKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhaiNu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="SoCMND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaTrinhDoVanHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaNgoaiNgu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoSoHoKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PhieuDiChuyen">
+    <Key>
+      <PropertyRef Name="SoPhieu" />
+    </Key>
+    <Property Name="SoPhieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgayLapPhieu" Type="DateTime" Precision="0" />
+    <Property Name="DiaChiNoiDen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TrinhDo">
+    <Key>
+      <PropertyRef Name="MaTrinhDoVanHoa" />
+    </Key>
+    <Property Name="MaTrinhDoVanHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenTrinhDoVanHoa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="Dan_So_Mot_Quan_14Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ChiTietPhieuDiChuyens" EntityType="Self.ChiTietPhieuDiChuyen" />
+    <EntitySet Name="HoKhaus" EntityType="Self.HoKhau" />
+    <EntitySet Name="NgoaiNgus" EntityType="Self.NgoaiNgu" />
+    <EntitySet Name="NhanKhaus" EntityType="Self.NhanKhau" />
+    <EntitySet Name="PhieuDiChuyens" EntityType="Self.PhieuDiChuyen" />
+    <EntitySet Name="TrinhDoes" EntityType="Self.TrinhDo" />
+  </EntityContainer>
+</Schema>

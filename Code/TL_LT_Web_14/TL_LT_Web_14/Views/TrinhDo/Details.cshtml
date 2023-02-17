@@ -1,0 +1,43 @@
+﻿@model TL_LT_Web_14.Models.TrinhDo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .dl-horizontal {
+        margin-left: 50%;
+        transform: translateX(-30%);
+    }
+
+    h2, h4 {
+        text-align: center;
+    }
+</style>
+
+<div>
+    <h2>Chi tiết</h2>
+    <h4>Trình độ</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã trình độ văn hóa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaTrinhDoVanHoa)
+        </dd>
+
+        <dt>
+            Tên trình độ văn hóa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTrinhDoVanHoa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

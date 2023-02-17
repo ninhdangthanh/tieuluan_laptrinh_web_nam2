@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Dan_So_Mot_Quan_14ModelStoreContainer" CdmEntityContainer="Dan_So_Mot_Quan_14Entities">
+    <EntitySetMapping Name="ChiTietPhieuDiChuyens">
+      <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.ChiTietPhieuDiChuyen">
+        <MappingFragment StoreEntitySet="ChiTietPhieuDiChuyen">
+          <ScalarProperty Name="SoPhieu" ColumnName="SoPhieu" />
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="MaNhanKhau" ColumnName="MaNhanKhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoKhaus">
+      <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.HoKhau">
+        <MappingFragment StoreEntitySet="HoKhau">
+          <ScalarProperty Name="SoSoHoKhau" ColumnName="SoSoHoKhau" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="MaPhuong" ColumnName="MaPhuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NgoaiNgus">
+      <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.NgoaiNgu">
+        <MappingFragment StoreEntitySet="NgoaiNgu">
+          <ScalarProperty Name="MaNgoaiNgu" ColumnName="MaNgoaiNgu" />
+          <ScalarProperty Name="TenNgoaiNgu" ColumnName="TenNgoaiNgu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanKhaus">
+      <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.NhanKhau">
+        <MappingFragment StoreEntitySet="NhanKhau">
+          <ScalarProperty Name="MaNhanKhau" ColumnName="MaNhanKhau" />
+          <ScalarProperty Name="TenNhanKhau" ColumnName="TenNhanKhau" />
+          <ScalarProperty Name="PhaiNu" ColumnName="PhaiNu" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="SoCMND" ColumnName="SoCMND" />
+          <ScalarProperty Name="MaTrinhDoVanHoa" ColumnName="MaTrinhDoVanHoa" />
+          <ScalarProperty Name="MaNgoaiNgu" ColumnName="MaNgoaiNgu" />
+          <ScalarProperty Name="SoSoHoKhau" ColumnName="SoSoHoKhau" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuDiChuyens">
+      <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.PhieuDiChuyen">
+        <MappingFragment StoreEntitySet="PhieuDiChuyen">
+          <ScalarProperty Name="SoPhieu" ColumnName="SoPhieu" />
+          <ScalarProperty Name="NgayLapPhieu" ColumnName="NgayLapPhieu" />
+          <ScalarProperty Name="DiaChiNoiDen" ColumnName="DiaChiNoiDen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrinhDoes">
+      <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.TrinhDo">
+        <MappingFragment StoreEntitySet="TrinhDo">
+          <ScalarProperty Name="MaTrinhDoVanHoa" ColumnName="MaTrinhDoVanHoa" />
+          <ScalarProperty Name="TenTrinhDoVanHoa" ColumnName="TenTrinhDoVanHoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

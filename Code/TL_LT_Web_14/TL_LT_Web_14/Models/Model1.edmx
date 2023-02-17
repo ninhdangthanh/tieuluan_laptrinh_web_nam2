@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Dan_So_Mot_Quan_14Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChiTietPhieuDiChuyen">
+          <Key>
+            <PropertyRef Name="SoPhieu" />
+          </Key>
+          <Property Name="SoPhieu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="STT" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaNhanKhau" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="HoKhau">
+          <Key>
+            <PropertyRef Name="SoSoHoKhau" />
+          </Key>
+          <Property Name="SoSoHoKhau" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaPhuong" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NgoaiNgu">
+          <Key>
+            <PropertyRef Name="MaNgoaiNgu" />
+          </Key>
+          <Property Name="MaNgoaiNgu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenNgoaiNgu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NhanKhau">
+          <Key>
+            <PropertyRef Name="MaNhanKhau" />
+          </Key>
+          <Property Name="MaNhanKhau" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenNhanKhau" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhaiNu" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgaySinh" Type="date" />
+          <Property Name="SoCMND" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaTrinhDoVanHoa" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaNgoaiNgu" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoSoHoKhau" Type="nvarchar" MaxLength="50" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PhieuDiChuyen">
+          <Key>
+            <PropertyRef Name="SoPhieu" />
+          </Key>
+          <Property Name="SoPhieu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NgayLapPhieu" Type="date" />
+          <Property Name="DiaChiNoiDen" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TrinhDo">
+          <Key>
+            <PropertyRef Name="MaTrinhDoVanHoa" />
+          </Key>
+          <Property Name="MaTrinhDoVanHoa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenTrinhDoVanHoa" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="Dan_So_Mot_Quan_14ModelStoreContainer">
+          <EntitySet Name="ChiTietPhieuDiChuyen" EntityType="Self.ChiTietPhieuDiChuyen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HoKhau" EntityType="Self.HoKhau" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgoaiNgu" EntityType="Self.NgoaiNgu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NhanKhau" EntityType="Self.NhanKhau" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhieuDiChuyen" EntityType="Self.PhieuDiChuyen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrinhDo" EntityType="Self.TrinhDo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Dan_So_Mot_Quan_14Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ChiTietPhieuDiChuyen">
+          <Key>
+            <PropertyRef Name="SoPhieu" />
+          </Key>
+          <Property Name="SoPhieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaNhanKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HoKhau">
+          <Key>
+            <PropertyRef Name="SoSoHoKhau" />
+          </Key>
+          <Property Name="SoSoHoKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaPhuong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NgoaiNgu">
+          <Key>
+            <PropertyRef Name="MaNgoaiNgu" />
+          </Key>
+          <Property Name="MaNgoaiNgu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenNgoaiNgu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NhanKhau">
+          <Key>
+            <PropertyRef Name="MaNhanKhau" />
+          </Key>
+          <Property Name="MaNhanKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenNhanKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhaiNu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="SoCMND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaTrinhDoVanHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaNgoaiNgu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoSoHoKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PhieuDiChuyen">
+          <Key>
+            <PropertyRef Name="SoPhieu" />
+          </Key>
+          <Property Name="SoPhieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NgayLapPhieu" Type="DateTime" Precision="0" />
+          <Property Name="DiaChiNoiDen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TrinhDo">
+          <Key>
+            <PropertyRef Name="MaTrinhDoVanHoa" />
+          </Key>
+          <Property Name="MaTrinhDoVanHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenTrinhDoVanHoa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Dan_So_Mot_Quan_14Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChiTietPhieuDiChuyens" EntityType="Self.ChiTietPhieuDiChuyen" />
+          <EntitySet Name="HoKhaus" EntityType="Self.HoKhau" />
+          <EntitySet Name="NgoaiNgus" EntityType="Self.NgoaiNgu" />
+          <EntitySet Name="NhanKhaus" EntityType="Self.NhanKhau" />
+          <EntitySet Name="PhieuDiChuyens" EntityType="Self.PhieuDiChuyen" />
+          <EntitySet Name="TrinhDoes" EntityType="Self.TrinhDo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Dan_So_Mot_Quan_14ModelStoreContainer" CdmEntityContainer="Dan_So_Mot_Quan_14Entities">
+          <EntitySetMapping Name="ChiTietPhieuDiChuyens">
+            <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.ChiTietPhieuDiChuyen">
+              <MappingFragment StoreEntitySet="ChiTietPhieuDiChuyen">
+                <ScalarProperty Name="SoPhieu" ColumnName="SoPhieu" />
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="MaNhanKhau" ColumnName="MaNhanKhau" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HoKhaus">
+            <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.HoKhau">
+              <MappingFragment StoreEntitySet="HoKhau">
+                <ScalarProperty Name="SoSoHoKhau" ColumnName="SoSoHoKhau" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="MaPhuong" ColumnName="MaPhuong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NgoaiNgus">
+            <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.NgoaiNgu">
+              <MappingFragment StoreEntitySet="NgoaiNgu">
+                <ScalarProperty Name="MaNgoaiNgu" ColumnName="MaNgoaiNgu" />
+                <ScalarProperty Name="TenNgoaiNgu" ColumnName="TenNgoaiNgu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhanKhaus">
+            <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.NhanKhau">
+              <MappingFragment StoreEntitySet="NhanKhau">
+                <ScalarProperty Name="MaNhanKhau" ColumnName="MaNhanKhau" />
+                <ScalarProperty Name="TenNhanKhau" ColumnName="TenNhanKhau" />
+                <ScalarProperty Name="PhaiNu" ColumnName="PhaiNu" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="SoCMND" ColumnName="SoCMND" />
+                <ScalarProperty Name="MaTrinhDoVanHoa" ColumnName="MaTrinhDoVanHoa" />
+                <ScalarProperty Name="MaNgoaiNgu" ColumnName="MaNgoaiNgu" />
+                <ScalarProperty Name="SoSoHoKhau" ColumnName="SoSoHoKhau" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhieuDiChuyens">
+            <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.PhieuDiChuyen">
+              <MappingFragment StoreEntitySet="PhieuDiChuyen">
+                <ScalarProperty Name="SoPhieu" ColumnName="SoPhieu" />
+                <ScalarProperty Name="NgayLapPhieu" ColumnName="NgayLapPhieu" />
+                <ScalarProperty Name="DiaChiNoiDen" ColumnName="DiaChiNoiDen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrinhDoes">
+            <EntityTypeMapping TypeName="Dan_So_Mot_Quan_14Model.TrinhDo">
+              <MappingFragment StoreEntitySet="TrinhDo">
+                <ScalarProperty Name="MaTrinhDoVanHoa" ColumnName="MaTrinhDoVanHoa" />
+                <ScalarProperty Name="TenTrinhDoVanHoa" ColumnName="TenTrinhDoVanHoa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

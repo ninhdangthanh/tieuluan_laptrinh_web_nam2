@@ -1,0 +1,66 @@
+﻿@model TL_LT_Web_14.Models.HoKhau
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .form-horizontal {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    h2, h4 {
+        text-align: center;
+    }
+</style>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h2>Sửa</h2>
+        <h4>Hộ khẩu</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <label class="control-label col-md-4">Số sổ hộ khẩu</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.SoSoHoKhau)
+                @Html.ValidationMessageFor(model => model.SoSoHoKhau)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Địa chỉ</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.DiaChi)
+                @Html.ValidationMessageFor(model => model.DiaChi)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Mã phường</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.MaPhuong)
+                @Html.ValidationMessageFor(model => model.MaPhuong)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-6 col-md-10">
+                <input type="submit" value="Lưu lại" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

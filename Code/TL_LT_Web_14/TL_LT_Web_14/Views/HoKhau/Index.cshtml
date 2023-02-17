@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TL_LT_Web_14.Models.HoKhau>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hộ khẩu</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Số sổ hộ khẩu
+        </th>
+        <th>
+           Địa chỉ
+        </th>
+        <th>
+            Mã phường
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoSoHoKhau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaPhuong)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id = item.SoSoHoKhau }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id = item.SoSoHoKhau }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.SoSoHoKhau })
+        </td>
+    </tr>
+}
+
+</table>

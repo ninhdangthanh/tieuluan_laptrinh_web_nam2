@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TL_LT_Web_14.Models.ChiTietPhieuDiChuyen>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết phiếu di chuyển</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Số phiếu
+        </th>
+        <th>
+            Số thứ tự
+        </th>
+        <th>
+            Mã nhân khẩu
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoPhieu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNhanKhau)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id = item.SoPhieu }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id = item.SoPhieu }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.SoPhieu })
+        </td>
+    </tr>
+}
+
+</table>

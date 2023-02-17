@@ -1,0 +1,114 @@
+﻿@model TL_LT_Web_14.Models.NhanKhau
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .form-horizontal {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    h2, h4 {
+        text-align: center;
+    }
+</style>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h2>Sửa</h2>
+        <h4>Nhân khẩu</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <label class="control-label col-md-4">Mã nhân khẩu</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.MaNhanKhau)
+                @Html.ValidationMessageFor(model => model.MaNhanKhau)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Tên nhân khẩu</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.TenNhanKhau)
+                @Html.ValidationMessageFor(model => model.TenNhanKhau)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Phái nữ</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.PhaiNu)
+                @Html.ValidationMessageFor(model => model.PhaiNu)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Ngày sinh</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.NgaySinh)
+                @Html.ValidationMessageFor(model => model.NgaySinh)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Số CMND</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.SoCMND)
+                @Html.ValidationMessageFor(model => model.SoCMND)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Mã trình độ văn hóa</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.MaTrinhDoVanHoa)
+                @Html.ValidationMessageFor(model => model.MaTrinhDoVanHoa)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Mã ngoại ngữ</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.MaNgoaiNgu)
+                @Html.ValidationMessageFor(model => model.MaNgoaiNgu)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Số sổ hộ khẩu</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.SoSoHoKhau)
+                @Html.ValidationMessageFor(model => model.SoSoHoKhau)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Ghi chú</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.GhiChu)
+                @Html.ValidationMessageFor(model => model.GhiChu)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-6 col-md-10">
+                <input type="submit" value="Lưu lại" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

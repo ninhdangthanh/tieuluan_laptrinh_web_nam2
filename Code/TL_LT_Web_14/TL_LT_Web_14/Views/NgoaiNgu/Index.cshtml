@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TL_LT_Web_14.Models.NgoaiNgu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ngoại ngữ</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã ngoại ngữ
+        </th>
+        <th>
+            Tên ngoại ngữ
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNgoaiNgu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNgoaiNgu)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id = item.MaNgoaiNgu }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id = item.MaNgoaiNgu }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.MaNgoaiNgu })
+        </td>
+    </tr>
+}
+
+</table>
