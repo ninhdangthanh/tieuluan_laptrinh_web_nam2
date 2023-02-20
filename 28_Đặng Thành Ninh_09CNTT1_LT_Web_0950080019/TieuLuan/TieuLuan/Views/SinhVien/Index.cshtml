@@ -1,0 +1,76 @@
+﻿@model IEnumerable<TieuLuan.Models.SinhVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bảng Sinh Viên</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã Sinh Viên
+        </th>
+        <th>
+            Họ SV
+        </th>
+        <th>
+            Tên SV
+        </th>
+        <th>
+            Ngày sinh
+        </th>
+        <th>
+            Phái
+        </th>
+        <th>
+            Điện thoại
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Mã khoa
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaSinhVien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoSinhVien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSinhVien)
+        </td>
+        <td>
+            @Convert.ToDateTime(item.NgaySinh).ToString("dd/MM/yyyy")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DienThoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKhoa)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new {  id=item.MaSinhVien  }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id = item.MaSinhVien }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.MaSinhVien })
+        </td>
+    </tr>
+}
+
+</table>

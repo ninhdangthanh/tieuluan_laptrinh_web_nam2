@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_Diem_SinhVienModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GiaoVien">
+    <Key>
+      <PropertyRef Name="MaGiaoVien" />
+    </Key>
+    <Property Name="MaGiaoVien" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenGiaoVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HocVi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaKhoa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KetQua">
+    <Key>
+      <PropertyRef Name="MaSinhVien" />
+    </Key>
+    <Property Name="MaSinhVien" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaKhoaHoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LanThi" Type="Int32" Nullable="false" />
+    <Property Name="Diem" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Khoa">
+    <Key>
+      <PropertyRef Name="MaKhoa" />
+    </Key>
+    <Property Name="MaKhoa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenKhoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KhoaHoc">
+    <Key>
+      <PropertyRef Name="MaKhoaHoc" />
+    </Key>
+    <Property Name="MaKhoaHoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaGiaoVien" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaMonHoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgayBatDau" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NgayKetThuc" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="MonHoc">
+    <Key>
+      <PropertyRef Name="MaMonHoc" />
+    </Key>
+    <Property Name="MaMonHoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoTietLyThuyet" Type="Int32" Nullable="false" />
+    <Property Name="SoTietThucHanh" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SinhVien">
+    <Key>
+      <PropertyRef Name="MaSinhVien" />
+    </Key>
+    <Property Name="MaSinhVien" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HoSinhVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenSinhVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Phai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaKhoa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="QL_Diem_SinhVienEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GiaoViens" EntityType="Self.GiaoVien" />
+    <EntitySet Name="KetQuas" EntityType="Self.KetQua" />
+    <EntitySet Name="Khoas" EntityType="Self.Khoa" />
+    <EntitySet Name="KhoaHocs" EntityType="Self.KhoaHoc" />
+    <EntitySet Name="MonHocs" EntityType="Self.MonHoc" />
+    <EntitySet Name="SinhViens" EntityType="Self.SinhVien" />
+  </EntityContainer>
+</Schema>

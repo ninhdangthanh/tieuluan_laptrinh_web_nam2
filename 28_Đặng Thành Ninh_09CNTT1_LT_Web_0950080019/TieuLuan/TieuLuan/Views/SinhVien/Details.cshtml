@@ -1,0 +1,80 @@
+﻿@model TieuLuan.Models.SinhVien
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    th, td {
+        padding-top: 0;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    table {
+        width: 100%;
+    }
+    td {
+        font-size: 16px;
+        width: 49%;
+    }
+    th {
+        text-align: right;
+        width: 49%;
+    }
+    .colon {
+        width: 2%;
+        text-align: center;
+    }
+</style>
+<h2 style="text-align:center"><strong>Chi tiết</strong></h2>
+
+<div>
+    <h3 style="text-align:center">Sinh viên</h3>
+	<hr />
+    <table style="margin: 0 auto;">
+        <tr>
+            <th><h4><strong>Mã Sinh Viên</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.MaSinhVien)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Họ SV</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.HoSinhVien)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Tên SV</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.TenSinhVien)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Ngày sinh</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.NgaySinh)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Phái</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.Phai)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Điện thoại</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.DienThoai)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Địa chỉ</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.DiaChi)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Mã khoa</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.MaKhoa)</td>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Trở về danh sách", "Index")
+</p>

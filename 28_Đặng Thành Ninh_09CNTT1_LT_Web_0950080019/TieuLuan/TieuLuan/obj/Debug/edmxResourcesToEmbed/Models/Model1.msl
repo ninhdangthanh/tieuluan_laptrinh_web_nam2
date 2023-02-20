@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QL_Diem_SinhVienModelStoreContainer" CdmEntityContainer="QL_Diem_SinhVienEntities1">
+    <EntitySetMapping Name="GiaoViens">
+      <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.GiaoVien">
+        <MappingFragment StoreEntitySet="GiaoVien">
+          <ScalarProperty Name="MaGiaoVien" ColumnName="MaGiaoVien" />
+          <ScalarProperty Name="TenGiaoVien" ColumnName="TenGiaoVien" />
+          <ScalarProperty Name="HocVi" ColumnName="HocVi" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KetQuas">
+      <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.KetQua">
+        <MappingFragment StoreEntitySet="KetQua">
+          <ScalarProperty Name="MaSinhVien" ColumnName="MaSinhVien" />
+          <ScalarProperty Name="MaKhoaHoc" ColumnName="MaKhoaHoc" />
+          <ScalarProperty Name="LanThi" ColumnName="LanThi" />
+          <ScalarProperty Name="Diem" ColumnName="Diem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khoas">
+      <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.Khoa">
+        <MappingFragment StoreEntitySet="Khoa">
+          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+          <ScalarProperty Name="TenKhoa" ColumnName="TenKhoa" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhoaHocs">
+      <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.KhoaHoc">
+        <MappingFragment StoreEntitySet="KhoaHoc">
+          <ScalarProperty Name="MaKhoaHoc" ColumnName="MaKhoaHoc" />
+          <ScalarProperty Name="MaGiaoVien" ColumnName="MaGiaoVien" />
+          <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+          <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+          <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MonHocs">
+      <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.MonHoc">
+        <MappingFragment StoreEntitySet="MonHoc">
+          <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+          <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
+          <ScalarProperty Name="SoTietLyThuyet" ColumnName="SoTietLyThuyet" />
+          <ScalarProperty Name="SoTietThucHanh" ColumnName="SoTietThucHanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SinhViens">
+      <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.SinhVien">
+        <MappingFragment StoreEntitySet="SinhVien">
+          <ScalarProperty Name="MaSinhVien" ColumnName="MaSinhVien" />
+          <ScalarProperty Name="HoSinhVien" ColumnName="HoSinhVien" />
+          <ScalarProperty Name="TenSinhVien" ColumnName="TenSinhVien" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="Phai" ColumnName="Phai" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

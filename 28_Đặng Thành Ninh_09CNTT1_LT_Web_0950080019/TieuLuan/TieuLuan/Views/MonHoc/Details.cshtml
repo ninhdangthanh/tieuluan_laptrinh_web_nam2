@@ -1,0 +1,67 @@
+﻿@model TieuLuan.Models.MonHoc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    th, td {
+        padding-top: 0;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td {
+        font-size: 16px;
+        width: 49%;
+    }
+
+    th {
+        text-align: right;
+        width: 49%;
+    }
+
+    .colon {
+        width: 2%;
+        text-align: center;
+    }
+</style>
+<h2 style="text-align:center"><strong>Chi tiết</strong></h2>
+
+<div>
+    <h3 style="text-align:center">Môn học</h3>
+	<hr />
+    
+
+    <table style="margin: 0 auto;">
+        <tr>
+            <th><h4><strong>Mã môn học</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.MaMonHoc)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Tên môn học</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.TenMonHoc)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Số tiết lý thuyết</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.SoTietLyThuyet)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Số tiết thực hành</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.SoTietThucHanh)</td>
+        </tr>
+    </table>
+
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

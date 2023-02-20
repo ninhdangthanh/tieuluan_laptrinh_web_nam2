@@ -1,0 +1,66 @@
+﻿@model TieuLuan.Models.KetQua
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center"><strong>Tạo mới</strong></h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h3 style="text-align:center">Kết quả</h3>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Mã sinh viên</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.MaSinhVien)
+                @Html.ValidationMessageFor(model => model.MaSinhVien)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Mã khóa học</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.MaKhoaHoc)
+                @Html.ValidationMessageFor(model => model.MaKhoaHoc)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Lần thi</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.LanThi)
+                @Html.ValidationMessageFor(model => model.LanThi)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Điểm</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Diem)
+                @Html.ValidationMessageFor(model => model.Diem)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

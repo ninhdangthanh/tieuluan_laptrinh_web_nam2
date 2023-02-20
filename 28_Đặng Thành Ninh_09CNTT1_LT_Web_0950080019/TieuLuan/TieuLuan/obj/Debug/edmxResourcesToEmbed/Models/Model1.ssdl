@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_Diem_SinhVienModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GiaoVien">
+    <Key>
+      <PropertyRef Name="MaGiaoVien" />
+    </Key>
+    <Property Name="MaGiaoVien" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenGiaoVien" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HocVi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaKhoa" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KetQua">
+    <Key>
+      <PropertyRef Name="MaSinhVien" />
+    </Key>
+    <Property Name="MaSinhVien" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaKhoaHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LanThi" Type="int" Nullable="false" />
+    <Property Name="Diem" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Khoa">
+    <Key>
+      <PropertyRef Name="MaKhoa" />
+    </Key>
+    <Property Name="MaKhoa" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenKhoa" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DienThoai" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KhoaHoc">
+    <Key>
+      <PropertyRef Name="MaKhoaHoc" />
+    </Key>
+    <Property Name="MaKhoaHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaGiaoVien" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaMonHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NgayBatDau" Type="date" Nullable="false" />
+    <Property Name="NgayKetThuc" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MonHoc">
+    <Key>
+      <PropertyRef Name="MaMonHoc" />
+    </Key>
+    <Property Name="MaMonHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenMonHoc" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SoTietLyThuyet" Type="int" Nullable="false" />
+    <Property Name="SoTietThucHanh" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SinhVien">
+    <Key>
+      <PropertyRef Name="MaSinhVien" />
+    </Key>
+    <Property Name="MaSinhVien" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="HoSinhVien" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenSinhVien" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgaySinh" Type="date" Nullable="false" />
+    <Property Name="Phai" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DienThoai" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MaKhoa" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="QL_Diem_SinhVienModelStoreContainer">
+    <EntitySet Name="GiaoVien" EntityType="Self.GiaoVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KetQua" EntityType="Self.KetQua" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khoa" EntityType="Self.Khoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhoaHoc" EntityType="Self.KhoaHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

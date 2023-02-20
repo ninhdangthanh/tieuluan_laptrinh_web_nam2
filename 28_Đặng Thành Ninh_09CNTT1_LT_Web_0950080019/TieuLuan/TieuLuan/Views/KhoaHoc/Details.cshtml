@@ -1,0 +1,69 @@
+﻿@model TieuLuan.Models.KhoaHoc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    th, td {
+        padding-top: 0;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td {
+        font-size: 16px;
+        width: 49%;
+    }
+
+    th {
+        text-align: right;
+        width: 49%;
+    }
+
+    .colon {
+        width: 2%;
+        text-align: center;
+    }
+</style>
+<h2 style="text-align:center"><strong>Chi tiết</strong></h2>
+
+<div>
+    <h3 style="text-align:center">Khóa học</h3>
+	<hr />
+    <table style="margin: 0 auto;">
+        <tr>
+            <th><h4><strong>Mã Khóa Học</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.MaKhoaHoc)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Mã Giáo Viên</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.MaGiaoVien)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Mã Môn Học</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.MaMonHoc)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Ngày bắt đầu</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.NgayBatDau)</td>
+        </tr>
+        <tr>
+            <th><h4><strong>Ngày kết thúc</strong></h4></th>
+            <td class="colon">:</td>
+            <td>@Html.DisplayFor(model => model.NgayKetThuc)</td>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Trở về danh sách", "Index")
+</p>

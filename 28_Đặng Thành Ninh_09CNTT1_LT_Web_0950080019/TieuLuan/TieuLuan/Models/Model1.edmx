@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QL_Diem_SinhVienModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GiaoVien">
+          <Key>
+            <PropertyRef Name="MaGiaoVien" />
+          </Key>
+          <Property Name="MaGiaoVien" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenGiaoVien" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HocVi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaKhoa" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KetQua">
+          <Key>
+            <PropertyRef Name="MaSinhVien" />
+          </Key>
+          <Property Name="MaSinhVien" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaKhoaHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LanThi" Type="int" Nullable="false" />
+          <Property Name="Diem" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Khoa">
+          <Key>
+            <PropertyRef Name="MaKhoa" />
+          </Key>
+          <Property Name="MaKhoa" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenKhoa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DienThoai" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KhoaHoc">
+          <Key>
+            <PropertyRef Name="MaKhoaHoc" />
+          </Key>
+          <Property Name="MaKhoaHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaGiaoVien" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaMonHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="NgayBatDau" Type="date" Nullable="false" />
+          <Property Name="NgayKetThuc" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MonHoc">
+          <Key>
+            <PropertyRef Name="MaMonHoc" />
+          </Key>
+          <Property Name="MaMonHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenMonHoc" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SoTietLyThuyet" Type="int" Nullable="false" />
+          <Property Name="SoTietThucHanh" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SinhVien">
+          <Key>
+            <PropertyRef Name="MaSinhVien" />
+          </Key>
+          <Property Name="MaSinhVien" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="HoSinhVien" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenSinhVien" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NgaySinh" Type="date" Nullable="false" />
+          <Property Name="Phai" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="DienThoai" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MaKhoa" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="QL_Diem_SinhVienModelStoreContainer">
+          <EntitySet Name="GiaoVien" EntityType="Self.GiaoVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KetQua" EntityType="Self.KetQua" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Khoa" EntityType="Self.Khoa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KhoaHoc" EntityType="Self.KhoaHoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QL_Diem_SinhVienModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GiaoVien">
+          <Key>
+            <PropertyRef Name="MaGiaoVien" />
+          </Key>
+          <Property Name="MaGiaoVien" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenGiaoVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HocVi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaKhoa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KetQua">
+          <Key>
+            <PropertyRef Name="MaSinhVien" />
+          </Key>
+          <Property Name="MaSinhVien" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaKhoaHoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LanThi" Type="Int32" Nullable="false" />
+          <Property Name="Diem" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Khoa">
+          <Key>
+            <PropertyRef Name="MaKhoa" />
+          </Key>
+          <Property Name="MaKhoa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenKhoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KhoaHoc">
+          <Key>
+            <PropertyRef Name="MaKhoaHoc" />
+          </Key>
+          <Property Name="MaKhoaHoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaGiaoVien" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaMonHoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NgayBatDau" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NgayKetThuc" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="MonHoc">
+          <Key>
+            <PropertyRef Name="MaMonHoc" />
+          </Key>
+          <Property Name="MaMonHoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoTietLyThuyet" Type="Int32" Nullable="false" />
+          <Property Name="SoTietThucHanh" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SinhVien">
+          <Key>
+            <PropertyRef Name="MaSinhVien" />
+          </Key>
+          <Property Name="MaSinhVien" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HoSinhVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenSinhVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Phai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaKhoa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="QL_Diem_SinhVienEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GiaoViens" EntityType="Self.GiaoVien" />
+          <EntitySet Name="KetQuas" EntityType="Self.KetQua" />
+          <EntitySet Name="Khoas" EntityType="Self.Khoa" />
+          <EntitySet Name="KhoaHocs" EntityType="Self.KhoaHoc" />
+          <EntitySet Name="MonHocs" EntityType="Self.MonHoc" />
+          <EntitySet Name="SinhViens" EntityType="Self.SinhVien" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QL_Diem_SinhVienModelStoreContainer" CdmEntityContainer="QL_Diem_SinhVienEntities1">
+          <EntitySetMapping Name="GiaoViens">
+            <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.GiaoVien">
+              <MappingFragment StoreEntitySet="GiaoVien">
+                <ScalarProperty Name="MaGiaoVien" ColumnName="MaGiaoVien" />
+                <ScalarProperty Name="TenGiaoVien" ColumnName="TenGiaoVien" />
+                <ScalarProperty Name="HocVi" ColumnName="HocVi" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KetQuas">
+            <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.KetQua">
+              <MappingFragment StoreEntitySet="KetQua">
+                <ScalarProperty Name="MaSinhVien" ColumnName="MaSinhVien" />
+                <ScalarProperty Name="MaKhoaHoc" ColumnName="MaKhoaHoc" />
+                <ScalarProperty Name="LanThi" ColumnName="LanThi" />
+                <ScalarProperty Name="Diem" ColumnName="Diem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Khoas">
+            <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.Khoa">
+              <MappingFragment StoreEntitySet="Khoa">
+                <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+                <ScalarProperty Name="TenKhoa" ColumnName="TenKhoa" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhoaHocs">
+            <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.KhoaHoc">
+              <MappingFragment StoreEntitySet="KhoaHoc">
+                <ScalarProperty Name="MaKhoaHoc" ColumnName="MaKhoaHoc" />
+                <ScalarProperty Name="MaGiaoVien" ColumnName="MaGiaoVien" />
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+                <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MonHocs">
+            <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.MonHoc">
+              <MappingFragment StoreEntitySet="MonHoc">
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
+                <ScalarProperty Name="SoTietLyThuyet" ColumnName="SoTietLyThuyet" />
+                <ScalarProperty Name="SoTietThucHanh" ColumnName="SoTietThucHanh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SinhViens">
+            <EntityTypeMapping TypeName="QL_Diem_SinhVienModel.SinhVien">
+              <MappingFragment StoreEntitySet="SinhVien">
+                <ScalarProperty Name="MaSinhVien" ColumnName="MaSinhVien" />
+                <ScalarProperty Name="HoSinhVien" ColumnName="HoSinhVien" />
+                <ScalarProperty Name="TenSinhVien" ColumnName="TenSinhVien" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="Phai" ColumnName="Phai" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

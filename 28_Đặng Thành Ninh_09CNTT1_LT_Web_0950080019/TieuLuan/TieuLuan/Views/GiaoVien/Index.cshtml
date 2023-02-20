@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TieuLuan.Models.GiaoVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bảng Giáo Viên</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã Giáo Viên
+        </th>
+        <th>
+            Tên Giáo Viên
+        </th>
+        <th>
+            Học vị
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Mã khoa
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaGiaoVien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenGiaoVien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HocVi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoDienThoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKhoa)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id = item.MaGiaoVien }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id = item.MaGiaoVien }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.MaGiaoVien })
+        </td>
+    </tr>
+}
+
+</table>

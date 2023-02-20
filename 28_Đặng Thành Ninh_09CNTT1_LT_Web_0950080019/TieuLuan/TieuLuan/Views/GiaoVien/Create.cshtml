@@ -1,0 +1,74 @@
+﻿@model TieuLuan.Models.GiaoVien
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center"><strong>Tạo mới</strong></h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h3 style="text-align:center">Giáo Viên</h3>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Mã giáo viên</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.MaGiaoVien)
+                @Html.ValidationMessageFor(model => model.MaGiaoVien)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Tên giáo viên</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.TenGiaoVien)
+                @Html.ValidationMessageFor(model => model.TenGiaoVien)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Học vị</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.HocVi)
+                @Html.ValidationMessageFor(model => model.HocVi)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Số điện thoại</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.SoDienThoai)
+                @Html.ValidationMessageFor(model => model.SoDienThoai)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4">Mã khoa</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.MaKhoa)
+                @Html.ValidationMessageFor(model => model.MaKhoa)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TieuLuan.Models.KhoaHoc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bảng Khóa Học</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã Khóa Học
+        </th>
+        <th>
+            Mã Giáo Viên
+        </th>
+        <th>
+            Mã Môn Học
+        </th>
+        <th>
+            Ngày bắt đầu
+        </th>
+        <th>
+            Ngày kết thúc
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKhoaHoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaGiaoVien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaMonHoc)
+        </td>
+        <td>
+            @Convert.ToDateTime(item.NgayBatDau).ToString("dd/MM/yyyy")
+        </td>
+        <td>
+            @Convert.ToDateTime(item.NgayKetThuc).ToString("dd/MM/yyyy")
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id = item.MaKhoaHoc }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id = item.MaKhoaHoc }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.MaKhoaHoc })
+        </td>
+    </tr>
+}
+
+</table>

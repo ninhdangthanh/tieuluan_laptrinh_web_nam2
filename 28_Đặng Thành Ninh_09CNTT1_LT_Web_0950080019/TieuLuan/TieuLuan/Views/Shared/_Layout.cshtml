@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    </head>
+<style>
+    .text-box.single-line {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.428571429;
+        color: #555555;
+        vertical-align: middle;
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+        box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+        -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+
+    .form-horizontal {
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    .col-md-offset-2.col-md-10 {
+        text-align: center;
+    }
+
+    
+    
+</style>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <strong style="font-size:20px">@Html.ActionLink("Quản lý điểm sinh viên", "Index", "SinhVien", null, new { @class = "navbar-brand" })</strong>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Sinh Viên", "Index", "SinhVien")</li>
+                    <li>@Html.ActionLink("Kết quả", "Index", "KetQua")</li>
+                    <li>@Html.ActionLink("Khoa", "Index", "Khoa")</li>
+                    <li>@Html.ActionLink("Giáo viên", "Index", "GiaoVien")</li>
+                    <li>@Html.ActionLink("Khóa học", "Index", "KhoaHoc")</li>
+                    <li>@Html.ActionLink("Môn học", "Index", "MonHoc")</li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

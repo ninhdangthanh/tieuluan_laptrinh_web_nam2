@@ -1,0 +1,52 @@
+﻿@model IEnumerable<TieuLuan.Models.MonHoc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bảng Môn Học</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã Môn Học
+        </th>
+        <th>
+            Tên Môn Học
+        </th>
+        <th>
+            Số tiết lý thuyết
+        </th>
+        <th>
+            Số tiết thực hành
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaMonHoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenMonHoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoTietLyThuyet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoTietThucHanh)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id = item.MaMonHoc }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id = item.MaMonHoc }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.MaMonHoc })
+        </td>
+    </tr>
+}
+
+</table>
